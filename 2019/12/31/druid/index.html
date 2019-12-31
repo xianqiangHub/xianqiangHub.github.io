@@ -22,8 +22,8 @@
 <meta name="keywords" content="druid" />
 
 
-<meta name="description" content="首先理解druid集群每个节点的作用不同，看Xmind
-1、druid数据接入，离线和实时生成的segment会上传到deepStorage，实时节点每个task由一个poen执行，生成segm..." />
+<meta name="description" content="首先理解druid集群每个节点的作用不同，看Druid核心组件的导图
+1、druid数据接入，离线和实时生成的segment会上传到deepStorage，实时节点每个task由一个poen执行..." />
 
 
 <meta name="robots" content="all" />
@@ -183,11 +183,11 @@
     </div>
     
     <div class="post-body post-content">
-        <p>首先理解druid集群每个节点的作用不同，看Xmind</p>
+        <p>首先理解druid集群每个节点的作用不同，看Druid核心组件的导图</p>
 <p>1、druid数据接入，离线和实时生成的segment会上传到deepStorage，实时节点每个task由一个poen执行，生成segment</p>
 <p>2、数据查询，一般远程提交请求到router节点，再路由到broker节点，broker会从realtime查询数据，再查询历史节点，历史节点简单来说就是加载数据到内存（根据druid_rules表查找要加载的数据，再查看自己的内存，从deep storage下载本地不存在的segment，再加载到内存查询），之后合并realtime和历史节点的数据返回结果</p>
 <p>*只支持单表操作</p>
-<p>xmind下载：</p>
+<p>Druid核心组件的导图下载：</p>
 <p>链接:<a href="https://pan.baidu.com/s/1kDCxSQh75HhHKTElQd-X7Q" target="_blank" rel="noopener">https://pan.baidu.com/s/1kDCxSQh75HhHKTElQd-X7Q </a></p>
 <p>提取码:l5yx</p>
 <p>从界面提交任务能更好学习，我是搭的生产的，学习可以使用单机或者docker</p>
