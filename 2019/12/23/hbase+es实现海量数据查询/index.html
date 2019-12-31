@@ -22,7 +22,9 @@
 <meta name="keywords" content="es,hbase" />
 
 
-<meta name="description" content="合抱之木 生于毫末" />
+<meta name="description" content="简单理解es存放的hbase的索引，hbase存放着真正的数据
+这样快的原因有：
+1、es数据存放在磁盘，查询依靠内存，比如有30个字段，其中只查询3个字段，单30个字段的只都加载到内存，是不条..." />
 
 
 <meta name="robots" content="all" />
@@ -182,7 +184,12 @@
     </div>
     
     <div class="post-body post-content">
-        
+        <p>简单理解es存放的hbase的索引，hbase存放着真正的数据</p>
+<p>这样快的原因有：</p>
+<p>1、es数据存放在磁盘，查询依靠内存，比如有30个字段，其中只查询3个字段，单30个字段的只都加载到内存，是不条数就加载的少了，所以查询的3个字段放到es，所有字段放到hbase<br>2、hbase虽然时伪随机查询，但是根据rowkey随机查询和范围查询速度非常快</p>
+<p>所以使用es和hbase组合查询的耗时是，两个查询的耗时和</p>
+<p>还要理解的是，其中es做了hbase的二级索引，hbase的的一级索引就是rowkey，二级索引是根据匹配列的值找到rowkey，再根据rowkey查到最后数据</p>
+
     </div>
     
     <div class="reward" ontouchstart>
